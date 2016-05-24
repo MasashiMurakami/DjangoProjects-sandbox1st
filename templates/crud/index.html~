@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<a href="{% url 'crud:add' %}">登録画面へ</a>{# 追加する #}
+<form method="post" action="">
+  <table border="1">
+    <thead>
+      <tr>
+	<th>message</th>
+	<th>created_at</th>
+	<th>updated_at</th>
+	<th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for message in messages %}
+      <tr>
+	<td>{{ message.message }}</td>
+	<td>{{ message.created_at }}</td>
+	<td>{{ message.updated_at }}</td>
+	<td><a href="{% url 'crud:edit' message.id %}">更新画面へ</a></td>{# 追加する #}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</form>
+{% endblock %}

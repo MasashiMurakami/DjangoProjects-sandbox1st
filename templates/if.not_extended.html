@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+  <meta charset="UTF-8">
+  <title>if sample</title>
+</head>
+
+<body>
+  {% if is_visible %} Show this 'cause is_visible is true,<br>
+  {% else %} Show this 'cause is_visible is false.<br>
+  {% endif %}
+  
+  {% if empty_str|length > 0 %} the number of empty_str is {{ empty_str|length }} .
+  {% else %} empty_str is empty.<br>
+  {% endif %}
+</body>
+</html>
